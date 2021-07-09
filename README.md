@@ -1,5 +1,5 @@
-# Chain-Oracle
-Chain Oracle is a creative outlet created by Joh Nostalg
+# Chainworks
+Chainworks is a passion project created by Joh Nostalg
 
 # Current version:
-[v0.1.2](https://ipfs.io/ipfs/QmRQpwg1Dd69GKQFkN9QvjH99w4o7VLdXbcygcWHLeiuaV) -> Playing card characters + avatar with a card game + instructions 
+[v0.1.3](https://ipfs.io/ipfs/Qmf5QSpxTx2A4QHPMFfSETgo6255GtC9dG4meErLmGU6gf) -> Changed title from Chain Oracle -> Chainworks + edited readme.txt and instructions
