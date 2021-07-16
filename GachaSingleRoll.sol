@@ -5,6 +5,9 @@ pragma solidity 0.6.6;
  * Used Chainlink Docs (Intermediates - Random Numbers) as a starter to build [https://docs.chain.link/docs/intermediates-tutorial/]
  * Only used this as I don't trust the Web 2.0 random dice rolls being... random, so I made this in rage.
  * Made in Ethereum Remix
+ * FUTURE WORK IDEAS
+ * 1. Editing/creating new Solidity code (Multiple pulls, figure how how to roll more than once, point the integers to the CID images on IPFS)
+ * 2. Implement it in a brownie project instead of just a solidity file
  */
 
 import "@chainlink/contracts/src/v0.6/VRFConsumerBase.sol";
