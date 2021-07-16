@@ -2,5 +2,5 @@
 [v0.1.2](https://ipfs.io/ipfs/QmRQpwg1Dd69GKQFkN9QvjH99w4o7VLdXbcygcWHLeiuaV) -> Playing card characters + avatar with a card game + instructions 
 [v0.1.3](https://ipfs.io/ipfs/Qmf5QSpxTx2A4QHPMFfSETgo6255GtC9dG4meErLmGU6gf) -> Changed title from Chain Oracle -> Chainworks + edited readme.txt and instructions
 v0.1.4:
-- [Images](https://ipfs.io/ipfs/QmWGs7JXVGZYAEs9PXoNCqYAXy6VXwrFDSgQYsHhPBuoBX) changed printing image sizes + added new maps for future games + added mini game
+- [Images](https://ipfs.io/ipfs/QmP18Fk7UKdUrbCNug91to3As7Cv4yBidk3vo6AgiY7GAi) changed printing image sizes + added new maps for future games + added mini game
 - [Added first Solidity Code](https://github.com/JohNostalg/Chainworks/blob/main/GachaSingleRoll.sol) -> Use Chainlink VRF to roll one(1) Hero 
