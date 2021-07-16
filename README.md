@@ -2,4 +2,6 @@
 Chainworks is a passion project created by Joh Nostalg
 
 # Current version:
-[v0.1.3](https://ipfs.io/ipfs/Qmf5QSpxTx2A4QHPMFfSETgo6255GtC9dG4meErLmGU6gf) -> Changed title from Chain Oracle -> Chainworks + edited readme.txt and instructions
+v0.1.4:
+[Images](https://ipfs.io/ipfs/QmWGs7JXVGZYAEs9PXoNCqYAXy6VXwrFDSgQYsHhPBuoBX) -> Changed title from Chain Oracle -> changed printing image sizes + added new maps
+[Added first Solidity Code](https://github.com/JohNostalg/Chainworks/blob/main/GachaSingleRoll.sol) -> Use Chainlink VRF to roll one(1) Hero 
