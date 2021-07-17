@@ -7,7 +7,7 @@ Chainworks is an anime-influenced creative passion project created by Joh Nostal
 - Single use gacha roll
 - Concept art characters on [IPFS](https://ipfs.io/ipfs/QmZAMCQxjeSu2JH1n6DtDXXm3zJJ82t7HCxCSWq5XwQwvq)
 - Two [games](https://ipfs.io/ipfs/QmbPAhB2Q7YypR5aGVSdY1FsTMZpgB8J5wLUnViU62J8xc) with custom maps for future games
-  - A card game for 6 people based on Love Letter (with instructions)
+  - A card game for 6 people based on Love Letter
   - A singleplayer time trial pair-of-2 mini game 
 
 # Gacha Instructions
