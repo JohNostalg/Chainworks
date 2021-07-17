@@ -1,5 +1,5 @@
 # Chainworks
-Chainworks is an anime-influenced creative passion project created by Joh Nostalg
+Chainworks is an anime-influenced creative production created by Joh Nostalg
 
 > If one does not know to which port one is sailing, no wind is favorable. ~ Seneca
 
