@@ -2,12 +2,14 @@
 pragma solidity 0.6.6;
 
 /**
- * Used Chainlink Docs (Intermediates - Random Numbers) as a starter to build [https://docs.chain.link/docs/intermediates-tutorial/]
- * Only used this as I don't trust the Web 2.0 random dice rolls being... random, so I made this in rage.
- * Made in Ethereum Remix
+ * Used Chainlink Docs (Intermediates - Random Numbers) as a starter to build 
+ * [https://docs.chain.link/docs/intermediates-tutorial/]
+ * Made this in rage as I don't trust the Web 2.0 random dice rolls being... random.
+ * Made in Ethereum Remix, works on Kovan testnet, Injected Web3 environment
  * FUTURE WORK IDEAS
- * 1. Editing/creating new Solidity code (Multiple pulls, figure how how to roll more than once, point the integers to the CID images on IPFS)
- * 2. Implement it in a brownie project instead of just a solidity file
+ * 1. Editing/creating new Solidity code; Multiple pulls, figure how how to roll more than once, 
+ * call refernece CID images/hash of Heroes on IPFS instead of string)
+ * 2. Deploy SingleGachaRoll.sol on Brownie
  */
 
 import "@chainlink/contracts/src/v0.6/VRFConsumerBase.sol";
@@ -93,7 +95,7 @@ contract VRFD36 is VRFConsumerBase, Owned {
     /**
      * @notice Get the house assigned to the player once the address has rolled
      * @param player address
-     * @return house as a string
+     * @return hero as a string
      */
     function hero(address player) public view returns (string memory) {
         require(s_results[player] != 0, "Dice not rolled");
@@ -152,46 +154,46 @@ contract VRFD36 is VRFConsumerBase, Owned {
     /**
      * @notice Get the hero namne from the id
      * @param id uint256
-     * @return house name string
+     * @return hero name string
      */
     function getHeroName(uint256 id) private pure returns (string memory) {
         string[36] memory heroNames = [
-            "Warrior",
-            "Magician",
-            "Common",
-            "Martyr",
-            "Rogue",
-            "Noble",
-            "Spy",
-            "Priest",
-            "Assassin",
-            "Prophet",
-            "Assassin",
-            "King",
-            "Farmer",
-            "Bishop",
-            "Doctor",
-            "Barbarian",
-            "Bard",
-            "Taverner",
-            "Lover",
-            "Banker",
-            "Prince",
-            "Hacker",
-            "Legalist",
-            "Engineer",
-            "Artist",
-            "Scientist",
-            "Pirate",
-            "Alien",
-            "Reporter",
-            "Drifter",
-            "Mercenary",
-            "Puppeteer",
-            "Driver",
-            "Cleaner",
-            "Worker",
-            "Star"
+            "Warrior - https://ipfs.io/ipfs/QmSEzSBwz6HEx9dHZFEtLC9kPjmuVpizhNpv4BWCaNUx22",
+            "Magician - https://ipfs.io/ipfs/QmWmtWZADeFaSfqYbnc3L3RHD8pgCZzFR4g8gwV7CQrf8K",
+            "Common - https://ipfs.io/ipfs/QmZLL7dm8EwRCCJLmKJQ1FovVHjBKC9SrnamnwbxQfauF6",
+            "Martyr - https://ipfs.io/ipfs/QmcWCKWMGBTfj8nYum4V6PH58VtaTJ3FKRJYETTtxNs3w6",
+            "Rogue - https://ipfs.io/ipfs/QmcbBKQnQuWEoEE68yDfzQPTNTraUsFfPVNgcrREP5Ct2D",
+            "Noble - https://ipfs.io/ipfs/QmTFmi18YtSQrrnZA9x9d3axcz7yctiDLDqZ2WP3WvjP6U",
+            "Spy - https://ipfs.io/ipfs/Qmav8YVKB5sNU6grrE2Aqvy7gzyDvx3xyojBy15JCUFnSy",
+            "Priest - https://ipfs.io/ipfs/QmYiu8W6CfE5UkCVNGumpCz5pfcVAr9ftRdanimeeCw3r1",
+            "Assassin - https://ipfs.io/ipfs/QmWVJn3Y46kD6pw13AAaUHBpXVg8Y4VcVQTtUoYgm69Y4w",
+            "Prophet - https://ipfs.io/ipfs/QmWn8LCGGYmaHrfMiSd5otKXqjKLqDXAq3VDubsE6yob3b",
+            "Assassin - https://ipfs.io/ipfs/QmPLZgXjHpFDzDp4s96EJ1bexcQbar5npkxV1f4w6wrBeK",
+            "King - https://ipfs.io/ipfs/QmRyPD9xVZc5vYep3d12fKMuQWTuwkeMYbKwbUkQE1CM3D",
+            "Farmer - https://ipfs.io/ipfs/QmfRWBjt5ZDGCWwtBrKNVNvPzqwjpjMRYHpct77sJjauhH",
+            "Bishop - https://ipfs.io/ipfs/QmXenb1VBUyWjRzpYyMh55F1xL1evG3t3e2R3vmkusmdej",
+            "Doctor - https://ipfs.io/ipfs/QmcMLS7yTe9BGvbSzj5PTUEG7xBS1LPG2WizK2syJW5LJb",
+            "Barbarian - https://ipfs.io/ipfs/QmaoqNxZuDSuyCjgmACNgS12xP2YWZw9XYyxVRz3PvRbLu",
+            "Bard - https://ipfs.io/ipfs/QmP7KRj399NRGxfKYrhe61eEM3QaCYjNRye9LQU3bLD4GNg",
+            "Taverner - https://ipfs.io/ipfs/QmU89qjeuzWe5iY8uwpNc4BnquRvnkrKuTQeC6CCDqAtX7",
+            "Lover - https://ipfs.io/ipfs/Qme8HGWH4cxsffashhbv6hkHUpN6pDJm4WHZygzh9R44HF",
+            "Banker - https://ipfs.io/ipfs/QmfSsNxiu2WXGqips2mEwHSj3F6GSzxCxj5k8WVUy9xp3D",
+            "Prince - https://ipfs.io/ipfs/QmW6PYxpRPC9aAHshDxGKPHtBbK3YYJcBxVHnjBDmrK17s",
+            "Hacker - https://ipfs.io/ipfs/QmNrzzVvVvQj6j2iQuM2ZpHF9N2XxgMjXmngH7zFNoLZ2X",
+            "Legalist - https://ipfs.io/ipfs/QmNpEmBNxkx4WKYAV9SJYSgUPDu1aU4xBJNG7gWqVn319p",
+            "Engineer - https://ipfs.io/ipfs/QmcF8E6tMo9jncMXhNHTSKvBkP3GrgUJBcxYLnPoVfZgGw",
+            "Artist - https://ipfs.io/ipfs/QmbCWAw2oyfcbBVGWmcThKt2PboMWAKBRZpxtMQMNfBFD5",
+            "Scientist - https://ipfs.io/ipfs/QmT72rPr7iFqBZixQYMxeHUwtpXY4kuAdbG3gWdeNF1Bac",
+            "Pirate - https://ipfs.io/ipfs/QmRoXNeGLtD1XutnnpyGoBdAQBiNdVXpPMrNi9DLqVG5c2",
+            "Alien - https://ipfs.io/ipfs/QmaoT9rUyYkQLTQdxHzc172qWTrHzWwc9Lfoimmjhie6hf",
+            "Reporter - https://ipfs.io/ipfs/QmRfaFATm36fjoaaKhnBQUJViojdKpZXsijDfhQo8RfcDy",
+            "Drifter - https://ipfs.io/ipfs/QmejWjLSQpjUoaf6QAAGE4XAfAGYvDDiJV8XXjMSfoZoTv",
+            "Mercenary - https://ipfs.io/ipfs/QmV9bJ1Mp259szE6rdy3VDBtcUgVy9yrkTLGUE8PVbzZ3M",
+            "Puppeteer - https://ipfs.io/ipfs/QmUigtL5QUxGsvBMEV6Qb5zaLeaLyuwoqd1qv5tqQ1kRCx",
+            "Driver - https://ipfs.io/ipfs/QmcwA7T9F46xcoZtT9dgpmsfo66XyaQ8GghYLPwMEom8Uk",
+            "Cleaner - https://ipfs.io/ipfs/QmfTojLPcD1eywogFxzd39GCXs4CCXh4dQT38NpykFva8p",
+            "Worker - https://ipfs.io/ipfs/QmZcw7SEGDUqVeBb8G9b8se3Y9tnMDGkPF5nSuiWRsQzVa",
+            "Star - https://ipfs.io/ipfs/QmcC2oqZdNmdn1c5X4dyf57X7nB36DSUQGbku8vxbmPzp1"
         ];
         return heroNames[id.sub(1)];
     }
