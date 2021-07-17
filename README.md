@@ -3,6 +3,23 @@ Chainworks is an anime-influenced creative passion project created by Joh Nostal
 
 > If one does not know to which port one is sailing, no wind is favorable. ~ Seneca
 
+# Current Features
+- Single use gacha roll
+- Concept art characters on (IPFS)[https://ipfs.io/ipfs/QmZAMCQxjeSu2JH1n6DtDXXm3zJJ82t7HCxCSWq5XwQwvq]
+
+# Gacha Instructions
+- Have Kovan ETH and LINK in your personal wallet
+- Open [Ethereum Remix](https://remix.ethereum.org/)
+- Copy and paste [GachaSingleRoll.sol](https://github.com/JohNostalg/Chainworks/blob/main/contracts/GachaSingleRoll.sol) in workspace 
+- Compile and deloy in Injected Web3 environment using the VRFCoordinator/Link/Keyhash/Fee in the Solidity file
+- Send Kovan LINK to The deployed Smart Contract created on Kovan testnet
+- Use RollDice, then use Hero function to find out who you get!
+
+# Future Iterations
+- Deploy contracts on Brownie
+- Develop personalities of characters
+- Delegating a Japanese creative company to create better artwork of the characters
+
 # Current version:
 v0.1.5:
 - [IPFS](https://ipfs.io/ipfs/QmVi6qhxheXhURa87KCAVpX3WaJJuDqDu4UWugcxeAhtgA)
