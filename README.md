@@ -5,7 +5,7 @@ Chainworks is an anime-influenced creative passion project created by Joh Nostal
 
 # Current Features
 - Single use gacha roll
-- Concept art characters on (IPFS)[https://ipfs.io/ipfs/QmZAMCQxjeSu2JH1n6DtDXXm3zJJ82t7HCxCSWq5XwQwvq]
+- Concept art characters on [IPFS](https://ipfs.io/ipfs/QmZAMCQxjeSu2JH1n6DtDXXm3zJJ82t7HCxCSWq5XwQwvq)
 
 # Gacha Instructions
 - Have Kovan ETH and LINK in your personal wallet
@@ -17,6 +17,7 @@ Chainworks is an anime-influenced creative passion project created by Joh Nostal
 
 # Future Iterations
 - Deploy contracts on Brownie
+- Find out a way to call reference IPFS images of Heroes in the smart contract
 - Develop personalities of characters
 - Delegating a Japanese creative company to create better artwork of the characters
 
