@@ -1,8 +1,6 @@
 # Chainworks
 Chainworks is an anime-influenced creative production created by Joh Nostalg
 
-> If one does not know to which port one is sailing, no wind is favorable. ~ Seneca
-
 # Current Features
 - Single use gacha roll
 - Concept art characters on [IPFS](https://ipfs.io/ipfs/QmZAMCQxjeSu2JH1n6DtDXXm3zJJ82t7HCxCSWq5XwQwvq)
@@ -16,7 +14,7 @@ Chainworks is an anime-influenced creative production created by Joh Nostalg
 - Copy and paste [GachaSingleRoll.sol](https://github.com/JohNostalg/Chainworks/blob/main/contracts/GachaSingleRoll.sol) in workspace 
 - Compile and deloy in Injected Web3 environment using the VRFCoordinator/Link/Keyhash/Fee in the Solidity file
 - Send Kovan LINK to The deployed Smart Contract created on Kovan testnet
-- Use RollDice, then use Hero function to find out who you get!
+- Use RollDice, then use Hero function (wait a few seconds for the data to go to and from VRF Coodinator) to find out who you get!
 
 # Future Iterations
 - Deploy contracts on Brownie
