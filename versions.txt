@@ -16,3 +16,6 @@ v0.1.5:
 - Split IPFS files into Characters, Games and Printing 
 - Forked [Chainlink-mix](https://github.com/smartcontractkit/chainlink-mix) 
 - Compiled GachaSingleRoll.sol on Brownie, added IPFS links to Heroes
+v0.1.6:
+- Built quick mock of the card game, [on Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=2555849128)
+- Forking [nft-mix](https://github.com/brownie-mix/nft-mix) to build test NFT's on Rinkleby testnet
