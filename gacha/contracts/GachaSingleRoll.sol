@@ -1,28 +1,21 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.6.6;
+pragma solidity 0.8.7;
 
-/**
- * Used Chainlink Docs (Intermediates - Random Numbers) as a starter to build 
- * [https://docs.chain.link/docs/intermediates-tutorial/]
- * Made this in rage as I don't trust the Web 2.0 random dice rolls being... random.
- * Made in Ethereum Remix, works on Kovan testnet, Injected Web3 environment
- * FUTURE WORK IDEAS
- * 1. Editing/creating new Solidity code; Multiple pulls, figure how how to roll more than once, 
- * call refernece CID images/hash of Heroes on IPFS instead of string)
- * 2. Deploy SingleGachaRoll.sol on Brownie
- */
-
-import "@chainlink/contracts/src/v0.6/VRFConsumerBase.sol";
-import "@chainlink/contracts/src/v0.6/Owned.sol";
+import "@chainlink/contracts/src/v0.8/VRFConsumerBase.sol";
+import "@chainlink/contracts/src/v0.8/ConfirmedOwner.sol";
 
 /**
  * @notice A Chainlink VRF consumer which uses randomness to mimic the rolling
- * of a 36 sided die
+ * of a 20 sided die
  * @dev This is only an example implementation and not necessarily suitable for mainnet.
  */
-contract VRFD36 is VRFConsumerBase, Owned {
-    using SafeMathChainlink for uint256;
 
+/**
+ * Request testnet LINK and ETH here: https://faucets.chain.link/
+ * Find information on LINK Token Contracts and get the latest ETH and LINK faucets here: https://docs.chain.link/docs/link-token-contracts/
+ */
+ 
+contract VRFD20 is VRFConsumerBase, ConfirmedOwner(msg.sender) {
     uint256 private constant ROLL_IN_PROGRESS = 42;
 
     bytes32 private s_keyHash;
@@ -48,7 +41,6 @@ contract VRFD36 is VRFConsumerBase, Owned {
      * @param fee uint256 fee to pay the VRF oracle
      */
     constructor(address vrfCoordinator, address link, bytes32 keyHash, uint256 fee)
-        public
         VRFConsumerBase(vrfCoordinator, link)
     {
         s_keyHash = keyHash;
@@ -87,7 +79,7 @@ contract VRFD36 is VRFConsumerBase, Owned {
      * @param randomness The random result returned by the oracle
      */
     function fulfillRandomness(bytes32 requestId, uint256 randomness) internal override {
-        uint256 d36Value = randomness.mod(36).add(1);
+        uint256 d36Value = (randomness % 36) + 1;
         s_results[s_rollers[requestId]] = d36Value;
         emit DiceLanded(requestId, d36Value);
     }
@@ -95,12 +87,12 @@ contract VRFD36 is VRFConsumerBase, Owned {
     /**
      * @notice Get the house assigned to the player once the address has rolled
      * @param player address
-     * @return hero as a string
+     * @return house as a string
      */
-    function hero(address player) public view returns (string memory) {
+    function house(address player) public view returns (string memory) {
         require(s_results[player] != 0, "Dice not rolled");
         require(s_results[player] != ROLL_IN_PROGRESS, "Roll in progress");
-        return getHeroName(s_results[player]);
+        return getHouseName(s_results[player]);
     }
 
     /**
@@ -152,13 +144,13 @@ contract VRFD36 is VRFConsumerBase, Owned {
     }
 
     /**
-     * @notice Get the hero namne from the id
+     * @notice Get the house namne from the id
      * @param id uint256
-     * @return hero name string
+     * @return house name string
      */
-    function getHeroName(uint256 id) private pure returns (string memory) {
-        string[36] memory heroNames = [
-           "Warrior - https://opensea.io/assets/0x152fcc68eb51c1c6b8fbc6411548f25a21791180/1",
+    function getHouseName(uint256 id) private pure returns (string memory) {
+        string[36] memory houseNames = [
+            "Warrior - https://opensea.io/assets/0x152fcc68eb51c1c6b8fbc6411548f25a21791180/1",
             "Magician - https://opensea.io/assets/0x152fcc68eb51c1c6b8fbc6411548f25a21791180/2",
             "Common - https://opensea.io/assets/0x152fcc68eb51c1c6b8fbc6411548f25a21791180/3",
             "Martyr - https://opensea.io/assets/0x152fcc68eb51c1c6b8fbc6411548f25a21791180/4",
@@ -195,6 +187,6 @@ contract VRFD36 is VRFConsumerBase, Owned {
             "Worker - https://opensea.io/assets/0x152fcc68eb51c1c6b8fbc6411548f25a21791180/35",
             "Star - https://opensea.io/assets/0x152fcc68eb51c1c6b8fbc6411548f25a21791180/36"
         ];
-        return heroNames[id.sub(1)];
+        return houseNames[id - 1];
     }
 }
